@@ -26,7 +26,7 @@ CLIでプロジェクト作成時に、デフォルトでマイグレーショ�
     
        Illuminate\Database\QueryException  : SQLSTATE[HY000] [1049] Unknown database 'forge' (SQL: select * from information_schema.tables where table_schema = forge and table_name = migrations and table_type = 'BASE TABLE')
    
-   データベース`forge`を作成して再度実行すると以下のような結果が得られる。
+データベース`forge`を作成して再度実行すると以下のような結果が得られる。
    
     ❯ php artisan migrate
     Migration table created successfully.
@@ -34,4 +34,18 @@ CLIでプロジェクト作成時に、デフォルトでマイグレーショ�
     Migrated:  2014_10_12_000000_create_users_table (0.04 seconds)
     Migrating: 2014_10_12_100000_create_password_resets_table
     Migrated:  2014_10_12_100000_create_password_resets_table (0.04 seconds)
+
+逆にロールバックする時は、以下のコマンドでデータベースを戻すことが出来る。
+
+    php artisan migrate:rollback
+
+しかし、一つずつ戻すのでなくまとめてロールバックしたい場合は、以下を使える。
+
+    php artisan migrate:rollback --step=5
+
+そして全部一気に戻したい場合には、以下のマイグレーションを戻すコマンドを使用する。
+
+    php artisan migrate:reset
+
+
 
