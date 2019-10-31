@@ -4,6 +4,12 @@ Laravelの勉強用のリポジトリ。
 Laravelのプロジェクトを作成したもの、
 練習用のコミットを混ぜたくなかったので分けた。
 
+## やりたいこと
+- データベースと接続する。
+  - MigrationでUserテーブルが出来たのでそのまま使用する
+  - Seedでデータを入れて参照できるようにする
+  
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
