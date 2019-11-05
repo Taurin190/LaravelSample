@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'default' => env('CACHE_DRIVER', 'file'),
+    'default' => env('CACHE_DRIVER', 'redis'),
 
     /*
     |--------------------------------------------------------------------------
@@ -47,10 +47,10 @@ return [
             'connection' => null,
         ],
 
-        'file' => [
-            'driver' => 'file',
-            'path' => storage_path('framework/cache/data'),
-        ],
+//        'file' => [
+//            'driver' => 'file',
+//            'path' => storage_path('framework/cache/data'),
+//        ],
 
         'memcached' => [
             'driver' => 'memcached',
@@ -74,6 +74,12 @@ return [
         'redis' => [
             'driver' => 'redis',
             'connection' => 'cache',
+            'servers' => [
+                'host' => env('REDIS_HOST', '127.0.0.1'),
+                'password' => env('REDIS_PASSWORD', 'foobared'),
+                'port' => env('REDIS_PORT', 6379),
+                'database' => env('REDIS_CACHE_DB', 1),
+            ],
         ],
 
         'dynamodb' => [
