@@ -4,6 +4,26 @@ Laravelの勉強用のリポジトリ。
 Laravelのプロジェクトを作成したもの、
 練習用のコミットを混ぜたくなかったので分けた。
 
+## 動かす手順
+dockerとphpが事前に使えるようにしておく。
+以下のコマンドでMySQLとRedisが立ち上がる。
+
+    docker-compose up -d
+
+MySQLの初期データベースを設定しているので、
+接続自体はできるもののテーブルが作成されていないので、
+以下のコマンドでユーザテーブルを作成する。
+
+    php artisan migrate
+
+データも入れる場合は、seekでデータを入れる。
+
+    php artisan migrate --seed
+
+テーブル作成がしたところでアプリを以下のコマンドで起動する。
+
+    php artisan serve
+
 ## やりたいこと
 - データベースと接続する。
   - MigrationでUserテーブルが出来たのでそのまま使用する
