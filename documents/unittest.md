@@ -6,5 +6,9 @@ CLIで以下を実施時にはtests/Feature以下にテストが追加される�
 
     php artisan make:test HomeTest
 
+`--unit`のオプションを付けるとtests/Unit以下にテストが追加される。
+
+    php artisan make:test HomeTest --unit
+
 ### 参考
 https://qiita.com/shindex512/items/4f28f8e06ef2d10e8d2b
