@@ -19,4 +19,16 @@ class HomeTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function testIndexWithoutLogin()
+    {
+        $response = $this->get('/');
+        $response->assertStatus(200);
+    }
+
+    public function testIndexWithLogin()
+    {
+        $response = $this->withSession(['laravel_session' => 'aaa'])->get('/');
+        $response->assertStatus(200);
+    }
 }
