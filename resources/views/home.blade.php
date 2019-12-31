@@ -17,6 +17,7 @@
                     You are logged in!
                 </div>
             </div>
+            <hacker-news></hacker-news>
         </div>
     </div>
 </div>
