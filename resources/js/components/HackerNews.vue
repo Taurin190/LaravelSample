@@ -4,8 +4,9 @@
     <div>
         <ul v-for="(news, index) in news_list" :key="index">
             <li>
-                <h3>{{ news.title }}</h3>
-                <span>{{ news.score }} points by {{ news.by }}</span>
+                <h3><a v-bind:href="news.url">{{ news.title }}</a></h3>
+                <span>{{ news.time | moment }}</span>
+                <span><b>{{ news.score }}</b> points by <b>{{ news.by }}</b></span>
                 <span>comments</span>
             </li>
         </ul>
@@ -14,6 +15,7 @@
 </template>
 <script>
 import axios from 'axios';
+import moment from 'moment';
 
 export default {
   name: 'HackerNews',
@@ -48,6 +50,11 @@ export default {
           .then((res) => {
               this.news_list.push(res.data);
           });
+      }
+  },
+  filters: {
+      moment: function (date) {
+          return moment.unix(date).format('YYYY/MM/DD HH:mm');
       }
   }
 }
