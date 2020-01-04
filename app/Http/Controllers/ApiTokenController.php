@@ -2,25 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth; 
 
+// WebからAPIトークンを取得する
 class ApiTokenController extends Controller
 {
-    /**
-     * 認証済みのユーザーのAPIトークンを更新する
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array
-     */
-    public function update(Request $request)
+    public function __construct()
     {
-        $token = Str::random(60);
+        $this->middleware('auth');
+    }
 
-        $request->user()->forceFill([
-            'api_token' => hash('sha256', $token),
-        ])->save();
-
-        return ['token' => $token];
+    public function create()
+    {
+        $user = Auth::user(); 
+        $token = $user->createToken('hackernews')->accessToken;
+        return response()->json(['token' => $token]);
     }
 }

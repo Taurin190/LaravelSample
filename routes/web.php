@@ -20,3 +20,5 @@ Route::get('/user', 'UserController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/token', 'ApiTokenController@create')->name('token');
