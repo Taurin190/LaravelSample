@@ -12,3 +12,4 @@ https://qiita.com/fruitriin/items/e0f2c9aa035c3ff2c874
 注意点は、以下です。
 - LaravelとVue.jsのコンパイルと起動は別途行う必要がある。
 - `npm run hot`でリアルタイムの反映するには、jsの呼び方を記事にあるように、`mix('js/app.js')`に変更する必要がある。
+- node_modulesがインストールされていないときは、`npm install`で必要なパッケージを入れる必要がある
