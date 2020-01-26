@@ -12,6 +12,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 
 COPY . /var/www/html
 
+RUN docker-php-ext-install pdo_mysql
 RUN composer install --ignore-platform-reqs
 
 # expose artisan port
