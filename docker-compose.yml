@@ -1,3 +1,9 @@
+app:
+  image: php:7.4-fpm
+  port: "8000:8000"
+  command: php artisan serve
+  volumes:
+  -
 mysql:
   image: mysql:5.7
   ports:
