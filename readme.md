@@ -14,11 +14,11 @@ MySQLの初期データベースを設定しているので、
 接続自体はできるもののテーブルが作成されていないので、
 以下のコマンドでユーザテーブルを作成する。
 
-    php artisan migrate
+    docker exec memoryexercise_app_1 php artisan migrate
 
 データも入れる場合は、seekでデータを入れる。
 
-    php artisan migrate --seed
+    docker exec memoryexercise_app_1 php artisan migrate --seed
 
 テーブル作成がしたところでアプリを以下のコマンドで起動する。
 
