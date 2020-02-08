@@ -26,3 +26,5 @@ Laravelの公式ドキュメントで、学んだことをドキュメントに�
 
 `bootstrap/app.php`を参照するとsingletonで返している。
 そのため、Karnelの部分は単一のインスタンスで処理を行なっている。
+より詳しい資料を発見した。
+https://qiita.com/takyam/items/c2d397dd486c047dcbb1
